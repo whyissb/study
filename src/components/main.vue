@@ -9,9 +9,9 @@
         <el-header class="header">
           <Header />
         </el-header>
-        <el-main>
-            <router-view />
-        </el-main>
+        <router-view> 
+          
+        </router-view>
       </el-container>
     </el-container>
   </div>

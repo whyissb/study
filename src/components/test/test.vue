@@ -1,20 +1,19 @@
 <template>
-   
-  <el-main>
-     <el-row>...</el-row>
-    <el-row>...</el-row>
-  </el-main>
-
+    <div>
+        <router-view></router-view>
+    </div>
 </template>
 
 <script>
 export default {
-    name: 'testPage1',
+    name: 'WorkspaceJsonTest',
+
     data() {
         return {
             
         };
     },
+
     mounted() {
         
     },
@@ -25,6 +24,6 @@ export default {
 };
 </script>
 
-<style  scoped>
+<style lang="scss" scoped>
 
 </style>
