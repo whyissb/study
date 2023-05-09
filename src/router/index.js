@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
  * @Author: why 2594258643@qq.com
  * @Date: 2023-05-09 09:53:39
@@ -14,15 +15,21 @@
  * @FilePath: \demo\src\router\index.js
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
+=======
+>>>>>>> 171164e88c2735be367f798728c84444b3e7fee9
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Cookie from 'js-cookie'
 import main from "../components/main.vue";
+<<<<<<< HEAD
 import test from "../components/test/test.vue";
+=======
+>>>>>>> 171164e88c2735be367f798728c84444b3e7fee9
 
 Vue.use(VueRouter)
 
 const routes = [
+<<<<<<< HEAD
   {
     path: '/',
     component: main,
@@ -53,6 +60,21 @@ const routes = [
             component: () => import(/* webpackChunkName: "about" */ '../components/test/test2.vue'),
           }
         ]
+=======
+  { 
+    path: '/',
+    component: main,
+    children:[
+      {
+        path: '/',
+        name: 'home',
+        component:  () => import(/* webpackChunkName: "about" */ '../components/home.vue'),
+      },
+      {
+        path: '/userPage',
+        name: 'userPage',
+        component:  () => import(/* webpackChunkName: "about" */ '../components/userPage.vue'),
+>>>>>>> 171164e88c2735be367f798728c84444b3e7fee9
       },
     ]
   },

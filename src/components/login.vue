@@ -1,8 +1,13 @@
 <!--
  * @Author: zhouchunchun 316581172@qq.com
  * @Date: 2023-05-04 16:19:08
+<<<<<<< HEAD
  * @LastEditors: why 2594258643@qq.com
  * @LastEditTime: 2023-05-08 10:50:53
+=======
+ * @LastEditors: zhouchunchun 316581172@qq.com
+ * @LastEditTime: 2023-05-06 13:50:55
+>>>>>>> 171164e88c2735be367f798728c84444b3e7fee9
  * @FilePath: \apid:\vscode\vue-project\demo\src\views\HomeView.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
