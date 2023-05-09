@@ -6,19 +6,35 @@ import main from "../components/main.vue";
 Vue.use(VueRouter)
 
 const routes = [
-  { 
+  {
     path: '/',
     component: main,
-    children:[
+    children: [
       {
         path: '/',
         name: 'home',
-        component:  () => import(/* webpackChunkName: "about" */ '../components/home.vue'),
+        component: () => import(/* webpackChunkName: "about" */ '../components/home.vue'),
       },
       {
-        path: '/userPage',
+        path: 'userPage',
         name: 'userPage',
-        component:  () => import(/* webpackChunkName: "about" */ '../components/userPage.vue'),
+        component: () => import(/* webpackChunkName: "about" */ '../components/userPage.vue'),
+      },
+      {
+        path: '/test1',
+        name: 'test',
+        children: [
+          {
+            path: '/test1',
+            name: 'testPage1',
+            component: () => import(/* webpackChunkName: "about" */ '../components/test/test1.vue'),
+          },
+          {
+            path: '/test2',
+            name: 'testPage2',
+            component: () => import(/* webpackChunkName: "about" */ '../components/test/test2.vue'),
+          }
+        ]
       },
     ]
   },
