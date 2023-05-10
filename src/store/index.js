@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import Cookie from 'js-cookie'
 
+
 Vue.use(Vuex)
 
 export default new Vuex.Store({
@@ -12,6 +13,9 @@ export default new Vuex.Store({
   getters: {
   },
   mutations: {
+    setusername(state,param){
+      state.username=param
+    },
     setCollapse(state){
       state.collapse=!state.collapse
     }

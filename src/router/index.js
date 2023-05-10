@@ -80,7 +80,6 @@ const router = new VueRouter({
 router.beforeEach((to, from, next) => {
   // 获取token
   const token = Cookie.get('token')
-
   if (!token && to.name !== 'login') {
     next({ name: 'login' })
   } else if (token && to.name === 'login') {
