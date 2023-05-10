@@ -1,7 +1,7 @@
 <template>
   <div>
     <el-container>
-      <el-aside class="aside" width="200px">
+      <el-aside class="aside" :width="isWidth">
         <Menu></Menu>
       </el-aside>
 
@@ -9,26 +9,31 @@
         <el-header class="header">
           <Header />
         </el-header>
-        <router-view> 
-          
-        </router-view>
+        <main>
+          <router-view />
+        </main>
       </el-container>
     </el-container>
   </div>
 </template>
 
 <script>
-import Menu from "../components/com/menu/menu";
-import Header from "./com/header/header.vue";
+
+import Header from "../header/header.vue";
+import Menu from '../menu/menu.vue';
 export default {
-  name: "WorkspaceJsonMain",
+  name: "mainPage",
   components: {
     Menu,
     Header,
   },
   //监听函数
   watch: {},
-
+  computed:{
+   isWidth(){
+    return this.$store.state.collapse?"60px":"200px"
+   }
+  },
   data() {
     return {};
   },
@@ -42,7 +47,6 @@ export default {
 <style  scoped>
 .aside {
   background-color: #545c64;
-
   height: 100vh;
 }
 .header {

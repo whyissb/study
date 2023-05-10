@@ -3,7 +3,7 @@
  * @Date: 2023-05-04 16:19:08
 <<<<<<< HEAD
  * @LastEditors: why 2594258643@qq.com
- * @LastEditTime: 2023-05-08 10:50:53
+ * @LastEditTime: 2023-05-09 13:50:09
 =======
  * @LastEditors: zhouchunchun 316581172@qq.com
  * @LastEditTime: 2023-05-06 13:50:55
@@ -52,7 +52,7 @@
 </template>
 
 <script>
-import { aaa } from "../assets/api/index";
+import { aaa } from "../../../assets/api/index";
 import Cookie from 'js-cookie'
 
 export default {
@@ -75,7 +75,6 @@ export default {
         let data = await aaa(param);
         Cookie.set('token',data.data.token)
         Cookie.set('username',data.data.username)
-        console.log(Cookie.set('token',data.data.token));
         this.$router.push('/');
         this.$message.success(`欢迎回来,${data.data.username}!`);
       } else {
