@@ -3,6 +3,7 @@
  * @Date: 2023-05-04 16:19:08
  * @LastEditors: why 2594258643@qq.com
  * @LastEditTime: 2023-05-08 10:50:53
+>>>>>>> md:src/components/com/login/login.vue
  * @FilePath: \apid:\vscode\vue-project\demo\src\views\HomeView.vue
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -47,8 +48,8 @@
 </template>
 
 <script>
-import { aaa } from "../assets/api/index";
-import Cookie from 'js-cookie'
+import { aaa } from "../../../assets/api/index";
+import Cookie from "js-cookie";
 
 export default {
   name: "HomeView",
@@ -65,14 +66,27 @@ export default {
         username: this.username,
         password: this.password,
       };
-      console.log(param);
       if (param.username === "1" && param.password === "1") {
-        let data = await aaa(param);
-        Cookie.set('token',data.data.token)
-        Cookie.set('username',data.data.username)
-        console.log(Cookie.set('token',data.data.token));
-        this.$router.push('/');
-        this.$message.success(`欢迎回来,${data.data.username}!`);
+        try {
+          let data = await aaa(param);
+          Cookie.set("token", data.data.token);
+          Cookie.set("username", data.data.username);
+          this.$store.commit('setusername',data.data.username)
+          this.$router.push("/");
+          this.$message.success(`欢迎回来,${data.data.username}!`);
+        } catch (error) {
+          let data = {
+            data: {
+              username: "王鸟宇",
+              token: "eeee",
+            },
+          };
+          Cookie.set("token", data.data.token);
+          Cookie.set("username", data.data.username);
+          this.$store.commit('setusername',data.data.username)
+          this.$router.push("/");
+          this.$message.success(`欢迎回来,${data.data.username}!`);
+        }
       } else {
         this.$message.error("账号密码错误，请重新输入");
       }
