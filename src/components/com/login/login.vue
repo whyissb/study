@@ -70,13 +70,12 @@ export default {
         username: this.username,
         password: this.password,
       };
-      console.log(param);
       if (param.username === "1" && param.password === "1") {
         try {
           let data = await aaa(param);
           Cookie.set("token", data.data.token);
           Cookie.set("username", data.data.username);
-           this.$store.commit('setusername',data.data.username)
+          this.$store.commit('setusername',data.data.username)
           this.$router.push("/");
           this.$message.success(`欢迎回来,${data.data.username}!`);
         } catch (error) {
