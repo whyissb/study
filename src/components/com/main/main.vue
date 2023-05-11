@@ -1,11 +1,10 @@
 <template>
   <div class="main">
-    <el-container>
+    <el-container >
       <el-aside class="aside" :width="isWidth">
         <Menu></Menu>
       </el-aside>
-
-      <el-container>
+      <el-container style=" height: 100vh;">
         <el-header class="header">
           <Header />
         </el-header>
@@ -45,15 +44,14 @@ export default {
 </script>
 
 <style  scoped>
-.main{
-   
+.mainpage{
+  overflow: scroll;
+  height: 100%;
 }
 .aside {
   background-color: #545c64;
-  height: 100vh;
 }
 .header {
   background-color: rgb(223, 211, 211);
-  height: 100vh;
 }
 </style>

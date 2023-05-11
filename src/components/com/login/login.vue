@@ -1,23 +1,6 @@
 <template>
-  <div
-    style="
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      
-    "
-  >
-    <div
-      style="
-        height: 300px;
-        width: 400px;
-        background-color: #fff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      "
-    >
+  <div class="loginpage">
+    <div class="loginbox">
       <div>
         <p>why系统</p>
         <form action="">
@@ -64,7 +47,7 @@ export default {
           let data = await aaa(param);
           Cookie.set("token", data.data.token);
           Cookie.set("username", data.data.username);
-          this.$store.commit('setusername',data.data.username)
+          this.$store.commit("setusername", data.data.username);
           this.$router.push("/");
           this.$message.success(`欢迎回来,${data.data.username}!`);
         } catch (error) {
@@ -76,7 +59,7 @@ export default {
           };
           Cookie.set("token", data.data.token);
           Cookie.set("username", data.data.username);
-          this.$store.commit('setusername',data.data.username)
+          this.$store.commit("setusername", data.data.username);
           this.$router.push("/");
           this.$message.success(`欢迎回来,${data.data.username}!`);
         }
@@ -88,56 +71,69 @@ export default {
   mounted() {},
 };
 </script>
-<style scoped>
-input {
-  border-style: solid;
-  border-top: #fff;
-  border-right: #fff;
-  border-radius: 5%;
-  border-color: aqua;
-  transition: transform 2s;
-}
+<style lang="scss" scoped>
+.loginpage {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../../../assets/img/login.png");
+  .loginbox {
+    height: 300px;
+    width: 400px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    input {
+      border-style: solid;
+      border-top: #fff;
+      border-right: #fff;
+      border-radius: 5%;
+      border-color: aqua;
+      transition: transform 2s;
+    }
+    input:focus {
+      outline: none;
+      transform: scale(1.2);
+      border-style: solid;
+      border-top: #fff;
+      border-radius: 5%;
+      border-color: aqua;
+    }
+    button {
+      width: 150px;
+      border: 1px solid aqua;
+      border-radius: 5%;
+      height: 35px;
+      margin-top: 10px;
+    }
 
-input:focus {
-  outline: none;
-  transform: scale(1.2);
-  border-style: solid;
-  border-top: #fff;
-  border-radius: 5%;
-  border-color: aqua;
-}
+    button:active {
+      background-color: aqua;
+    }
 
-button {
-  width: 150px;
-  border: 1px solid aqua;
-  border-radius: 5%;
-  height: 35px;
-  margin-top: 10px;
-}
+    button:hover {
+      animation: myfirst 1s;
+    }
 
-button:active {
-  background-color: aqua;
-}
+    @keyframes myfirst {
+      0% {
+        border-left: #fff;
+      }
 
-button:hover {
-  animation: myfirst 1s;
-}
+      25% {
+        border-bottom: #fff;
+      }
 
-@keyframes myfirst {
-  0% {
-    border-left: #fff;
-  }
+      50% {
+        border-right: #fff;
+      }
 
-  25% {
-    border-bottom: #fff;
-  }
-
-  50% {
-    border-right: #fff;
-  }
-
-  100% {
-    border-top: #fff;
+      100% {
+        border-top: #fff;
+      }
+    }
   }
 }
 </style>

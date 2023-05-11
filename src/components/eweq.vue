@@ -1,9 +1,9 @@
 <template>
     <div>
     <Table class="table" :tableColumn="tableColumn" :tableData="tableData" :border="true"></Table>
-    <div class="block">
+    
     <el-pagination
-    class="paginatuin"
+      class="paginatuin"
       @size-change="handleSizeChange"
       @current-change="handleCurrentChange"
       :current-page="currentPage4"
@@ -13,7 +13,7 @@
       layout="total, sizes, prev, pager, next, jumper"
       :total="400">
     </el-pagination>
-  </div>
+  
     </div>
 </template>
 
@@ -163,8 +163,7 @@ export default {
 
 <style  scoped>
 .paginatuin{
-  position: absolute;
-  right: 17%;
+  margin-left: 50%;
 }
 .table{
   width: 80%;

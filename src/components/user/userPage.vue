@@ -1,6 +1,6 @@
  <template>
   <div>
-    <el-row>
+    <el-row >
       <el-col :span="8">
         <el-card
           class="box-card"
@@ -19,9 +19,12 @@
             <p class="gray">上次登录地点 <span>北京</span></p>
           </div>
         </el-card>
+        <el-card style="margin-left: 20px;width:530px; height: 495px">
+          <Table :tableColumn="tableColumn" :tableData="tableData"></Table>
+        </el-card>
       </el-col>
       <el-col :span="15">
-        <el-card style="height: 200px; margin-top: 20px">
+        <el-card style=" margin-top: 20px">
           <div class="card">
             <div
               v-for="(item, index) in orderData"
@@ -45,28 +48,44 @@
         </el-card>
       </el-col>
       <el-col :span="15">
-        <el-card style="height: 150px; margin-top: 20px"> </el-card>
-      </el-col>
-      <el-col :span="8">
-        <el-card style="margin-left: 20px; width: 500px; height: 450px">
-          <Table :tableColumn="tableColumn" :tableData="tableData"></Table>
+        <el-card style=" margin-top: 20px">
+          <div class="card">
+            <div
+              v-for="(item, index) in orderData"
+              :key="index"
+              style="display: flex; margin-bottom: 10px; width: 33%"
+            >
+              <i
+                :class="`el-icon-${item.icon}`"
+                :style="{
+                  background: item.color,
+                  height: '80px',
+                  width: '80px',
+                }"
+              ></i>
+              <div class="detail">
+                <p>￥{{ item.value }}</p>
+                <p>{{ item.name }}</p>
+              </div>
+            </div>
+          </div>
         </el-card>
       </el-col>
       <el-col :span="8">
-        <el-card style="margin-top: 20px; width: 500px; height: 430px">
-          <div id="main" style="width: 450px; height: 430px"></div>
+        <el-card style="margin-top: 10px; width: 500px; height: 350px">
+          <div id="main" style="width: 450px; height: 350px"></div>
         </el-card>
       </el-col>
       <el-col :span="8">
         <el-card
           style="
-            margin-top: 20px;
+            margin-top: 10px;
             width: 500px;
-            height: 430px;
-            margin-right: 10px;
+            height: 350px;
+           
           "
         >
-          <div id="pieoption" style="height: 430px"></div>
+          <div id="pieoption" style="height: 350px"></div>
         </el-card>
       </el-col>
     </el-row>
