@@ -29,6 +29,7 @@ body,
   background-color: rgb(227, 231, 231);
   padding: 0;
   margin: 0;
+
 }
 
 </style>

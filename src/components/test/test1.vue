@@ -1,8 +1,7 @@
 <template>
    
   <el-main>
-     <el-row>...</el-row>
-    <el-row>...</el-row>
+    
   </el-main>
 
 </template>
@@ -25,6 +24,6 @@ export default {
 };
 </script>
 
-<style  scoped>
-
+<style lang="scss"  scoped>
+ 
 </style>

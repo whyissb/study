@@ -11,7 +11,7 @@
     <span @click="index">why系统</span>
     <el-dropdown @command="handleCommand" class="dropdown">
       <span class="el-dropdown-link">
-        <img class="user" src="../../../assets/1.jpg" alt="" />
+        <img class="user" src="../../../assets/img/1.jpg" alt="" />
       </span>
       <el-dropdown-menu slot="dropdown">
         <el-dropdown-item command="userPage" icon="el-icon-user-solid"

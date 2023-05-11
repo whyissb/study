@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="main">
     <el-container>
       <el-aside class="aside" :width="isWidth">
         <Menu></Menu>
@@ -9,7 +9,7 @@
         <el-header class="header">
           <Header />
         </el-header>
-        <main>
+        <main class="mainpage">
           <router-view />
         </main>
       </el-container>
@@ -45,6 +45,9 @@ export default {
 </script>
 
 <style  scoped>
+.main{
+   
+}
 .aside {
   background-color: #545c64;
   height: 100vh;

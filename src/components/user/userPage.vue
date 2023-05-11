@@ -4,10 +4,10 @@
       <el-col :span="8">
         <el-card
           class="box-card"
-          style="margin: 20px; width: 500px; height: 300px"
+          style="margin: 20px; "
         >
           <div slot="header" class="header">
-            <img src="../../assets/1.jpg" width="100px" class="img" />
+            <img src="../../assets/img/1.jpg" width="100px" class="img" />
             <div style="margin-left: 50px">
               <p style="font-size: 20px">{{ username }}</p>
               <p class="gray">超级管理员</p>
@@ -66,7 +66,7 @@
             margin-right: 10px;
           "
         >
-          <div id="pieoption" style="width: 500px; height: 430px"></div>
+          <div id="pieoption" style="height: 430px"></div>
         </el-card>
       </el-col>
     </el-row>

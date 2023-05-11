@@ -8,7 +8,36 @@
 -->
 <template>
   <div>
-  
+    <div class="block">
+      <el-carousel
+        type="card"
+        :interval="2000"
+        height="400px"
+        style="margin: auto"
+      >
+        <el-carousel-item v-for="(item, index) in srcList" :key="index">
+          <el-image class="b-img" :src="item.src" />
+        </el-carousel-item>
+      </el-carousel>
+      <div style="display: flex">
+        <el-card
+          v-for="(item, index) in srcList"
+          :key="index"
+          style="width: 500px; height: 200px"
+        >
+          <el-image :src="srcList[1].src" class="b-img" />
+        </el-card>
+      </div>
+      <div style="display: flex">
+        <el-card
+          v-for="(item, index) in srcList"
+          :key="index"
+          style="width: 500px; height: 200px"
+        >
+          <el-image class="b-img" :src="srcList[0].src" />
+        </el-card>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -20,6 +49,24 @@ export default {
   components: {},
   data() {
     return {
+      srcList: [
+        {
+          imgName: "whyissb",
+          src: require("../assets/img/L1.jpg"),
+        },
+        {
+          imgName: "whyissb",
+          src: require("../assets/img/L2.jpg"),
+        },
+        {
+          imgName: "whyissb",
+          src: require("../assets/img/L3.jpg"),
+        },
+        {
+          imgName: "whyissb",
+          src: require("../assets/img/L2.jpg"),
+        },
+      ],
       tableColumn: [
         {
           prop: "name",
@@ -97,5 +144,8 @@ export default {
 </script>
 
 <style lang="scss"  scoped>
+.b-img :hover {
+  transform: scale(1.5);
+}
 </style>
 
