@@ -16,23 +16,20 @@
         style="margin: auto"
       >
         <el-carousel-item v-for="(item, index) in srcList" :key="index">
-          <el-image class="b-img" :src="item.src" />
+          <el-image  class="imgBig" :src="item.src" />
         </el-carousel-item>
       </el-carousel>
       <div style="display: flex">
-        <el-card
-          v-for="(item, index) in srcList"
-          :key="index"
-          style="width: 500px; height: 200px"
-        >
+        <el-card v-for="(item, index) in srcList" :key="index" class="b-card">
           <el-image :src="srcList[1].src" class="b-img" />
         </el-card>
       </div>
       <div style="display: flex">
         <el-card
+          class="b-card"
           v-for="(item, index) in srcList"
           :key="index"
-          style="width: 500px; height: 200px"
+          style="width: 500px; height: 220px"
         >
           <el-image class="b-img" :src="srcList[0].src" />
         </el-card>
@@ -67,75 +64,6 @@ export default {
           src: require("../assets/img/L2.jpg"),
         },
       ],
-      tableColumn: [
-        {
-          prop: "name",
-          label: "姓名",
-        },
-        {
-          prop: "todayBuy",
-          label: "今日购买",
-        },
-        {
-          prop: "monthBuy",
-          label: "本月购买",
-        },
-        {
-          prop: "totalBuy",
-          label: "总购买",
-        },
-      ],
-
-      tableData: [
-        {
-          name: "oppo",
-          todayBuy: 100,
-          monthBuy: 300,
-          totalBuy: 800,
-        },
-        {
-          name: "华为",
-          todayBuy: 100,
-          monthBuy: 300,
-          totalBuy: 800,
-        },
-        {
-          name: "红米",
-          todayBuy: 100,
-          monthBuy: 300,
-          totalBuy: 800,
-        },
-        {
-          name: "vivo",
-          todayBuy: 100,
-          monthBuy: 300,
-          totalBuy: 800,
-        },
-        {
-          name: "苹果",
-          todayBuy: 100,
-          monthBuy: 300,
-          totalBuy: 800,
-        },
-        {
-          name: "小米",
-          todayBuy: 100,
-          monthBuy: 300,
-          totalBuy: 800,
-        },
-        {
-          name: "三星",
-          todayBuy: 100,
-          monthBuy: 300,
-          totalBuy: 800,
-        },
-        {
-          name: "魅族",
-          todayBuy: 100,
-          monthBuy: 300,
-          totalBuy: 800,
-        },
-      ],
     };
   },
   methods: {},
@@ -144,8 +72,29 @@ export default {
 </script>
 
 <style lang="scss"  scoped>
-.b-img :hover {
-  transform: scale(1.5);
+.b-img {
+ transition: transform .5s linear;
+ height: 200px;
+ width: 400px;
 }
+.imgBig{
+  transition: transform 1.5s linear;
+}
+.imgBig:hover{
+  transform:scale(1.5) ;
+}
+.b-card {
+  width: 500px;
+  height: 200px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.b-card :hover {
+  transform: translate3d(0,-2px,0);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1); 
+}
+
 </style>
 

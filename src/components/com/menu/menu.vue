@@ -64,17 +64,8 @@ export default {
     this.menuList = this.$router.options.routes;
   },
   mounted() {
-    window.onresize = () => {
-      return (() => {
-        this.$nextTick(() => {
-          this.headHeight();
-          console.log(this.headHeight());
-        });
-      })();
-    };
   },
   methods: {
-    
     handleOpen() {},
     handleClose() {},
   },
